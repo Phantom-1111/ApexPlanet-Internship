@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    font-family: Consolas, "Courier New", monospace;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+}
+
+
+header {
+    background-color: #252526;
+    color: #ffffff;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+
+.container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+
+.form-section,
+.list-section {
+    flex: 1;
+    background: #252526;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0;
+    border-radius: 3px;
+    border: 1px solid #3c3c3c;
+    background: #1e1e1e;
+    color: #d4d4d4;
+}
+
+input::placeholder {
+    color: #858585;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007acc;
+}
+
+
+button {
+    width: 100%;
+    padding: 8px;
+    border-radius: 3px;
+    border: none;
+    background-color: #0e639c;
+    color: white;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1177bb;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+
+.card {
+    padding: 10px;
+    border-radius: 4px;
+    background: #1e1e1e;
+    border: 1px solid #333;
+}
+
+
+.delete {
+    margin-top: 8px;
+    background-color: #a1260d;
+}
+
+.delete:hover {
+    background-color: #c42b1c;
+}
+
+
+#error {
+    color: #f48771;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}

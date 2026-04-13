@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Contact Manager</h1>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+
+        <!-- FORM -->
+        <div class="form-section">
+            <h2>Add Contact</h2>
+
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Full Name">
+                <input type="email" id="email" placeholder="Email Address">
+                <input type="text" id="phone" placeholder="Phone Number">
+                <button type="submit">Add Contact</button>
+            </form>
+
+            <p id="error"></p>
+        </div>
+
+        <!-- CONTACT LIST -->
+        <div class="list-section">
+            <h2>Contact List</h2>
+            <div id="contactList" class="grid"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
