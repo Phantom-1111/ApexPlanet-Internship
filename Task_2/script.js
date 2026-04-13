@@ -1,14 +1,15 @@
-let contacts = [];
+let students = [];
 
-document.getElementById("contactForm").addEventListener("submit", function(e) {
+document.getElementById("studentForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    let name = document.getElementById("name").value;
+    let fname = document.getElementById("fname").value;
+    let lname = document.getElementById("lname").value;
     let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
+    let course = document.getElementById("course").value;
     let error = document.getElementById("error");
 
-    if (name === "" || email === "" || phone === "") {
+    if (fname === "" || lname === "" || email === "" || course === "") {
         error.innerText = "All fields are required!";
         return;
     }
@@ -20,33 +21,37 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
 
     error.innerText = "";
 
-    contacts.push({ name, email, phone });
+    students.push({
+        name: fname + " " + lname,
+        email,
+        course
+    });
 
-    displayContacts();
+    displayStudents();
 
     this.reset();
 });
 
-function displayContacts() {
-    let list = document.getElementById("contactList");
+function displayStudents() {
+    let list = document.getElementById("studentList");
     list.innerHTML = "";
 
-    contacts.forEach((c, index) => {
+    students.forEach((s, index) => {
         let div = document.createElement("div");
         div.className = "card";
 
         div.innerHTML = `
-            <h3>${c.name}</h3>
-            <p>${c.email}</p>
-            <p>${c.phone}</p>
-            <button class="delete" onclick="deleteContact(${index})">Delete</button>
+            <h3>${s.name}</h3>
+            <p>${s.email}</p>
+            <p>${s.course}</p>
+            <button class="delete" onclick="deleteStudent(${index})">Delete</button>
         `;
 
         list.appendChild(div);
     });
 }
 
-function deleteContact(index) {
-    contacts.splice(index, 1);
-    displayContacts();
+function deleteStudent(index) {
+    students.splice(index, 1);
+    displayStudents();
 }

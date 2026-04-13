@@ -1,105 +1,117 @@
 body {
     margin: 0;
-    font-family: Consolas, "Courier New", monospace;
-    background-color: #1e1e1e;
-    color: #d4d4d4;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
 }
 
-
-header {
-    background-color: #252526;
-    color: #ffffff;
-    padding: 12px;
+/* HEADER */
+.header {
+    background: #111;
+    color: white;
     text-align: center;
-    border-bottom: 1px solid #333;
+    padding: 40px 20px;
 }
 
+/* FORM CARD */
+.form-container {
+    width: 650px;
+    margin: -40px auto 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
 
-.container {
-    display: flex;
-    padding: 20px;
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-
-.form-section,
-.list-section {
-    flex: 1;
-    background: #252526;
-    padding: 20px;
-    border-radius: 5px;
-    border: 1px solid #333;
+/* INPUT GROUP */
+.input-group {
+    display: flex;
+    flex-direction: column;
 }
 
+/* LABEL */
+label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
 
+/* INPUTS */
 input {
     width: 100%;
-    padding: 8px;
-    margin: 6px 0;
-    border-radius: 3px;
-    border: 1px solid #3c3c3c;
-    background: #1e1e1e;
-    color: #d4d4d4;
-}
-
-input::placeholder {
-    color: #858585;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
 }
 
 input:focus {
+    border-color: #111;
     outline: none;
-    border-color: #007acc;
 }
 
+/* GENDER */
+.gender {
+    margin-top: 15px;
+}
 
+/* BUTTON */
 button {
     width: 100%;
-    padding: 8px;
-    border-radius: 3px;
+    padding: 12px;
+    margin-top: 20px;
     border: none;
-    background-color: #0e639c;
+    border-radius: 6px;
+    background: #111;
     color: white;
-    font-weight: normal;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #1177bb;
+    background: #333;
 }
 
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
-}
-
-
+/* CARD */
 .card {
-    padding: 10px;
-    border-radius: 4px;
-    background: #1e1e1e;
-    border: 1px solid #333;
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
 }
 
+.card:hover {
+    transform: translateY(-3px);
+}
 
+/* DELETE */
 .delete {
-    margin-top: 8px;
-    background-color: #a1260d;
+    margin-top: 10px;
+    background: #e53935;
 }
 
 .delete:hover {
-    background-color: #c42b1c;
+    background: #c62828;
 }
 
-
+/* ERROR */
 #error {
-    color: #f48771;
+    color: red;
+    margin-top: 10px;
 }
 
+/* RESPONSIVE */
+@media (max-width: 700px) {
+    .form-container {
+        width: 90%;
+    }
 
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
+    .grid {
+        grid-template-columns: 1fr;
     }
 }
